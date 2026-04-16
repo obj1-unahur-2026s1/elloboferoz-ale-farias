@@ -1,0 +1,44 @@
+import feroz.feroz
+import caperucita.caperucita
+import cazador.cazador
+import abuelita.abuelita
+
+
+describe "Historia del Lobo Feroz y Caperucita" {
+
+    test "Feroz inicial no está saludable" {
+        assert.notThat(feroz.esSaludable())
+        assert.equals(10, feroz.pesoActual())
+    }
+
+    test "Feroz come una hamburguesa de 20" {
+        feroz.comer(20)
+        assert.equals(12, feroz.pesoActual())
+    }
+
+    test "Feroz corre" {
+        feroz.correr()
+        assert.equals(9, feroz.pesoActual())
+    }
+
+    test "Caperucita peso total inicial" {
+        assert.equals(61.2, caperucita.pesoTotal())
+    }
+
+    test "Caperucita se le cae una manzana" {
+        caperucita.sacarManzanas(1)
+        assert.equals(5, caperucita.cantidadDeManzanas())
+        assert.equals(61, caperucita.pesoTotal())
+    }
+
+    test "Feroz se come a la abuelita" {
+        feroz.comer(abuelita.peso())
+        assert.equals(15, feroz.pesoActual())
+    }
+
+    test "Feroz sufre una crisis" {
+        feroz.sufrirCrisis()
+        assert.equals(10, feroz.pesoActual())
+    }
+
+}
